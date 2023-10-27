@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: auto 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body{
+            height: 100%;
+        }
+        section{
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to right, #031E34 , #015752 );
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+
+        }
+        .logo{
+            position: absolute;
+            left: 40px;
+            top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* background-color: yellow; */
+        }
+        .logo img{
+            width: 50px;
+            margin-top: 0px;
+        }
+        .logo h2{
+            font-size: 35px;
+            margin-left: 10px;
+            line-height: 25px;
+        }
+        .left{
+            width: 50%;
+            height: 80%;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            /* background-color: red; */
+        }
+        .cover{
+            height: fit-content;
+            margin-left: 30px;
+            margin-right: 20px;
+        }
+        h1{
+            font-size: 60px;
+            font-weight: bold;
+            margin: 10px 0 3px 0;
+            color: #2BB673;
+        }
+        .line{
+            height: 3px;
+            width: 95%;
+            background-color: #2BB673;
+            margin-bottom: 20px;
+            margin-top: -5px;
+        }
+        h2{
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: white;
+        }
+        p{
+            text-align: justify;
+            color: rgb(189, 189, 189);
+        }
+        button{
+            margin-top: 30px;
+            width: 150px;
+            height: 50px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            background-color: #2BB673;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #208b57;
+            color: #cccccc;
+        }
+        .right{
+            width: 50%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: wheat; */
+        }
+        img{
+            margin-top: -50px;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="logo">
+            <img src="../images/play.png" alt="">
+            <h2>MauAkunPremium</h2>
+        </div>
+        <!-- left -->
+        <div class="left">
+            <div class="cover">
+                <h1>MauAkunPremium?</h1>
+                <div class="line"></div>
+                <h2>Sumber Terpercaya untuk Akun Premium</h2>
+                <p>Selamat datang di "MauAkunPremium", destinasi utama Anda untuk mengakses dunia hiburan premium! Kami adalah platform terpercaya yang menyediakan akses eksklusif ke akun premium berbagai layanan, termasuk Spotify, Netflix, Hulu, dan banyak lagi. Dengan berbagai pilihan akun premium berkualitas tinggi, kami menghadirkan pengalaman hiburan yang tak terkalahkan untuk Anda dan keluarga.</p>
+    
+                <!-- button -->
+                <a href="/products">
+                    <button>more detail</button>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- right -->
+        <div class="right">
+            <img src="../images/movie.png">
+        </div>
+    </section>
+</body>
+</html>

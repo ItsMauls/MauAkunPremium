@@ -43,7 +43,7 @@ class mainController {
           } else {
             await Cart.create({ ProductId: productId, UserId: userId, quantity : 1 });
           }
-          res.redirect(`/`);
+          res.redirect(`/products`);
         } catch (error) {
           console.log(error);
           res.send(error);
@@ -59,8 +59,10 @@ class mainController {
             }
           })
           let totalPrice = 0
-          if(cart.quantity > 0) {
-            totalPrice = await cart.totalPrice();
+          if(cart) {
+            if(cart.quantity > 0) {
+              totalPrice = await cart.totalPrice();
+            }
           }
 
           const data = await User.findOne({
@@ -87,6 +89,7 @@ class mainController {
           res.send(error);
         }
       }
+
     
       // adminAproval
       static async adminApproval(req, res) {
@@ -140,7 +143,7 @@ class mainController {
           const balance = await AdminAproval.sum("price");
           const format = sumTotal(balance);
     
-          res.render("adminaAprove", {
+          res.render("admin/adminApprove", {
             data,
             format,
           });

@@ -42,31 +42,44 @@ static async postSignup(req,res) {
 
 static async getLogin(req,res) {
     try {
-        res.render('auth/login', {isAuth : false, pageTitle : 'Login'})
+
+        res.render('auth/login', {isAuth : false, pageTitle : 'Login', errorMsg : ''})
     } catch (error) {
         res.send(error)
     }
 }
 
 static async postLogin(req,res) {
-    const {username, password} = req.body
-    
-    const user = await User.findOne({where : {
-        username : username
-    }})
-    const isPasswordEqualToHashedPassword = await bcrypt.compare(password, user.password)
-    console.log(isPasswordEqualToHashedPassword);
-    if(!isPasswordEqualToHashedPassword) {
-        return res.send('password tidak sama!')
+    try {
+        const {username, password} = req.body
+        
+        const user = await User.findOne({where : {
+            username : username
+        }})
+  
+        if(!user) {
+            return res.render('auth/login', {isAuth : false, pageTitle : 'Login', errorMsg : 'Username belum terdaftar'})
+        }
+        const isPasswordEqualToHashedPassword = await bcrypt.compare(password, user.password)
+        // console.log(isPasswordEqualToHashedPassword);
+        if(!isPasswordEqualToHashedPassword) {
+            return res.render('auth/login', {isAuth : false, pageTitle : 'Login', errorMsg : 'Password tidak sama!'})
+        }
+        req.session.user = user
+        req.session.isLoggedIn = true
+        res.redirect('/products')
+    } catch (error) {
+        res.send(error)
     }
-    req.session.user = user
-    req.session.isLoggedIn = true
-    res.redirect('/')
 }
 
 static async postLogout(req,res) {
-    await req.session.destroy()
-    res.redirect('/')
+    try {
+        await req.session.destroy()
+        res.redirect('/')
+    } catch (error) {
+        res.send(error)
+    }
 }
 
 static async getEmail(req,res) {

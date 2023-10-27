@@ -17,13 +17,81 @@ module.exports = (sequelize, DataTypes) => {
   }
   Product.init(
     {
-      name: DataTypes.STRING,
-      description: DataTypes.STRING,
-      price: DataTypes.INTEGER,
-      imageUrl: DataTypes.STRING,
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: {
+            args: true,
+            msg: "name gak boleh null"
+          },
+          notEmpty: {
+            args: true,
+            msg: "name gak boleh empty"
+          }
+        }
+      },
+
+      description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: {
+            args: true,
+            msg: "description gak boleh null"
+          },
+          notEmpty: {
+            args: true,
+            msg: "description gak boleh empty"
+          }
+        }
+      },
+
+      price: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notNull: {
+            args: true,
+            msg: "price gak boleh null"
+          },
+          notEmpty: {
+            args: true,
+            msg: "price gak boleh empty"
+          }
+        }
+      },
+
+      imageUrl: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: {
+            args: true,
+            msg: "imageUrl gak boleh null"
+          },
+          notEmpty: {
+            args: true,
+            msg: "imageUrl gak boleh empty"
+          }
+        }
+      },
       
       // fk category
-      CategoryId: DataTypes.INTEGER,
+      CategoryId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notNull: {
+            args: true,
+            msg: "username gak boleh null"
+          },
+          notEmpty: {
+            args: true,
+            msg: "username gak boleh empty"
+          }
+        }
+      }
     },
     {
       sequelize,

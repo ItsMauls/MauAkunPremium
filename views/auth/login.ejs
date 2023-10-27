@@ -1,5 +1,6 @@
 <%- include('../includes/navbar.ejs') %>
 <body>
+    <h1 class="text-red-500"><%= errorMsg %></h1>
     <form action="/login" method="post">
         <label for="">Username</label>
         <input type="text" name="username">
