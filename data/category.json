@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "music"
+  },
+  {
+    "id": 2,
+    "name": "movie"
+  },
+  {
+    "id": 3,
+    "name": "education"
+  }
+]

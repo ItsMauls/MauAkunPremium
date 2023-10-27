@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+  <body>
+    Admin approve
+    <table>
+      <tr>
+        <th>UserId</th>
+        <th>name</th>
+        <th>description</th>
+        <th>price</th>
+        <td>Action</td>
+      </tr>
+      <% data.forEach(el => { %>
+      <tr>
+        <td><%= el.UserId %></td>
+        <td><%= el.name %></td>
+        <td><%= el.description %></td>
+        <td><%= el.price %></td>
+        <td>
+          <a href="/adminaAprove/updateStatus/<%= el.id %>">
+            <button>aprove</button>
+          </a>
+        </td>
+      </tr>
+      <% }) %>
+    </table>
+
+    <h1>balance: <span><%= format %></span></h1>
+  </body>
+</html>

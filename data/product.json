@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "spoty permium",
+    "description": "30 hari",
+    "price": 50000,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/1200px-Spotify_App_Logo.svg.png",
+    "CategoryId": 1
+  },
+  {
+    "id": 2,
+    "name": "netflix permium",
+    "description": "60 hari",
+    "price": 60000,
+    "imageUrl": "https://images.ctfassets.net/4cd45et68cgf/Rx83JoRDMkYNlMC9MKzcB/2b14d5a59fc3937afd3f03191e19502d/Netflix-Symbol.png?w=700&h=456",
+    "CategoryId": 1
+  },
+  {
+    "id": 3,
+    "name": "udemiy permium",
+    "description": "4 bulan",
+    "price": 500000,
+    "imageUrl": "https://play-lh.googleusercontent.com/dsCkmJE2Fa8IjyXERAcwc5YeQ8_NvbZ4_OI8LgqyjILpXUfS5YhEcnAMajKPrZI-og",
+    "CategoryId": 1
+  }
+]
